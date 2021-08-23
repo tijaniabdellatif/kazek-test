@@ -18,17 +18,40 @@ import {
 
 function App() {
   return (
-   <div>
+   <Router>
      <Navbar />
      <Sidebar />
+
+     <Switch>
+
+     <Route exact path="/home">
      <Home />
-     <About />
+     </Route>
+
+     <Route exact path="/about"><About /></Route>
+
+     <Route exact path='/cart'>
      <Cart />
-     <Checkout />
-     <Products />
-     <SingleProduct />
+     </Route>
+
+    <Route exact path="/checkout"><Checkout /></Route> 
+
+    <Route exact path="/products"><Products /></Route> 
+
+
+      <Route exact path="/products/:id" children={<SingleProduct />} />
+
+     <Route exact path="*">
      <Error />
-   </div>
+     </Route>
+
+     </Switch>
+    
+   </Router>
+     
+   
+    
+   
   );
 }
 

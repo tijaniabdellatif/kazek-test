@@ -3,7 +3,7 @@ import React from 'react';
 const ErrorPage = () => {
 
     return(
-        <h1>this is a Checkout</h1>
+        <h1>this is a error page</h1>
     );
 }
 
