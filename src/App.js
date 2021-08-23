@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'; 
 
-import { Navbar,Sidebar } from './components';
+import { Navbar,Sidebar,Footer } from './components';
 
 
 import {
@@ -46,6 +46,8 @@ function App() {
      </Route>
 
      </Switch>
+
+     <Footer />
     
    </Router>
      

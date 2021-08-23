@@ -4,6 +4,7 @@ import logo from '../assets/logo-fi.png';
 import {FaBars} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import { links } from '../utils/constants';
+import MenuButtons from './MenuButtons';
 
 const Nav = () => {
 
@@ -11,18 +12,30 @@ const Nav = () => {
         <NavContainer>
             <div className="nav-center">
                 <div className="nav-header ">
+                 <Link to="/">
+                 <img src={logo} alt='Artshop' />
+                 </Link>
                  
-                 <img src='logo' alt='Artshop' />
                  <button type="button" className="nav-toggle">
-              icon side bar
+                  <FaBars />
                  </button>
                 </div>
                 
                 <ul className="nav-links">
-                 <li>Home</li>
-                 <li>Product</li>
-                 <li>About</li>
+                {
+                    links.map((link) => {
+                         const {id,text,url} = link;
+                         return(   <li key={id}>
+                            <Link to={url}>
+                              {text}
+                            </Link>
+                        </li>);
+                     
+                    })
+                }
                 </ul>
+
+                <MenuButtons />
           
             </div>
         </NavContainer>
